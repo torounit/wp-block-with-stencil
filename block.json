@@ -12,6 +12,12 @@
 		"field": {
 			"type": "string",
 			"default": ""
+		},
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": "my-hello",
+			"default": ""
 		}
 	},
 	"textdomain": "stencil-block",

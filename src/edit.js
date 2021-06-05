@@ -8,7 +8,7 @@ import './editor.scss';
 /**
  * @return {WPElement} Element to render.
  */
-export default function Edit( { attributes: { field }, setAttributes } ) {
+export default function Edit( { attributes: { field, content }, setAttributes } ) {
 	return (
 		<div { ...useBlockProps() }>
 			<InspectorControls>
@@ -24,7 +24,12 @@ export default function Edit( { attributes: { field }, setAttributes } ) {
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<my-hello name={ field }>こんにちは！</my-hello>
+			<my-hello name={ field }>
+				<RichText
+					value={ content }
+					onChange={ ( content ) => setAttributes( { content } ) }
+				/>
+			</my-hello>
 		</div>
 	);
 }
