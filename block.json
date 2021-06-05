@@ -8,6 +8,12 @@
 	"supports": {
 		"html": false
 	},
+	"attributes": {
+		"field": {
+			"type": "string",
+			"default": ""
+		}
+	},
 	"textdomain": "stencil-block",
 	"editorScript": "file:./build/index.js",
 	"editorStyle": "file:./build/index.css",

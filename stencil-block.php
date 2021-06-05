@@ -35,5 +35,4 @@ function register_components() {
 	<?php
 }
 
-add_action( 'wp_head', 'register_components' );
-add_action( 'admin_head', 'register_components', 1 );
+add_action( 'wp_print_scripts', 'register_components', 1 );
