@@ -14,7 +14,7 @@
 		"lint:js": "wp-scripts lint-js",
 		"start": "wp-scripts start  ./src/index.js ./src/script.js",
 		"components:build": "yarn workspace @stencil-gutenberg/components stencil build --docs",
-		"components:start": "yarn workspace @stencil-gutenberg/components stencil build --dev --watch --serve",
+		"components:start": "yarn workspace @stencil-gutenberg/components stencil build --watch",
 		"components:test": "yarn workspace @stencil-gutenberg/components stencil test --spec --e2e",
 		"components:test.watch": "yarn workspace @stencil-gutenberg/components stencil test --spec --e2e --watchAll",
 		"components:generate": "yarn workspace @stencil-gutenberg/components stencil generate"
