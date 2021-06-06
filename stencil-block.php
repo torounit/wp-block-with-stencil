@@ -13,21 +13,25 @@
  * @package           create-block
  */
 
-/**
- * Registers the block using the metadata loaded from the `block.json` file.
- * Behind the scenes, it registers also all assets so they can be enqueued
- * through the block editor in the corresponding context.
- *
- * @see https://developer.wordpress.org/block-editor/tutorials/block-tutorial/writing-your-first-block-type/
- */
 function create_block_stencil_block_block_init() {
-	register_block_type_from_metadata( __DIR__ );
+	$asset_file = include( __DIR__ . '/build/index.asset.php');
+
+	wp_register_style( 'stencil-block-editor-style', plugins_url('./build/index.css', __FILE__ ) );
+	wp_register_style( 'stencil-block-style', plugins_url('./build/style-index.css', __FILE__ ) );
+	wp_register_script( 'stencil-block-editor-script', plugins_url('./build/index.js', __FILE__ ),
+		$asset_file['dependencies'],
+		$asset_file['version']
+	);
+
+	register_block_type_from_metadata( __DIR__ . '/src/hello' );
+
 }
 add_action( 'init', 'create_block_stencil_block_block_init' );
 
 function register_components() {
 	$loader = plugins_url( 'packages/components/loader/index.es2017.js', __FILE__ );
 	?>
+	<script src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
 	<script type="module">
 	import { defineCustomElements } from '<?php echo $loader;?>';
 	defineCustomElements();

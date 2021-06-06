@@ -1,6 +1,6 @@
 {
 	"apiVersion": 2,
-	"name": "create-block/stencil-block",
+	"name": "wp-block-with-stencil/hello",
 	"title": "Stencil Block",
 	"category": "widgets",
 	"icon": "smiley",
@@ -21,7 +21,7 @@
 		}
 	},
 	"textdomain": "stencil-block",
-	"editorScript": "file:./build/index.js",
-	"editorStyle": "file:./build/index.css",
-	"style": "file:./build/style-index.css"
+	"editorScript": "stencil-block-editor-script",
+	"editorStyle": "stencil-block-editor-style",
+	"style": "stencil-block-style"
 }
